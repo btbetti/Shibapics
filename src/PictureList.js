@@ -1,4 +1,5 @@
 import React from 'react';
+import './PictureList.css';
 
 const PictureList = ({ pictures }) => {
 	return (
@@ -6,7 +7,7 @@ const PictureList = ({ pictures }) => {
 		{
 			pictures.map((picture, i) => {
 				return(
-					<img alt='pictures' src={picture} key={i}/>
+					<img className='image' alt='pictures' src={picture} key={i}/>
 				)
 			})
 		}

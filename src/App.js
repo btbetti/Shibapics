@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PictureList from './PictureList';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
-import logo from './logo.svg';
 import './App.css';
 
 const options = [
@@ -10,7 +9,6 @@ const options = [
   { value: 'birds', label: 'Birds' },
   { value: 'cats', label: 'Cats' }
 ];
-const defaultOption = options[0];
 
 class App extends Component {
   constructor() {
@@ -18,7 +16,7 @@ class App extends Component {
     this.state = {
       pictures: [],
       number: 1,
-      selectedOption: defaultOption
+      selectedOption: null
     }
   }
 
@@ -40,10 +38,19 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <Dropdown options={options} onChange={this.onSelect} value={defaultOption} placeholder="Select an option"/>
-        <input onChange={this.onChange} type='range' min='1' max='30' value={this.state.number}/>
-        <p>{this.state.number}</p>
-        <button onClick={this.onClick}>Get pictures</button>
+        <h1>Animal pictures viewer</h1>
+        <Dropdown 
+          className='dropdown' 
+          controlClassName='dropdownControl' 
+          menuClassName='dropdownMenu' 
+          arrowClassName='arrowClassName' 
+          options={options} 
+          onChange={this.onSelect} 
+          placeholder="Select an option"/>
+        <p className='text'>Number of animals</p>
+        <input className='slider' onChange={this.onChange} type='range' min='1' max='30' value={this.state.number}/>
+        <p className='inputLabel'>{this.state.number}</p>
+        <button className='button' onClick={this.onClick} disabled={!this.state.selectedOption}>Get pictures</button>
         <PictureList pictures={this.state.pictures}/>
       </div>
     );
