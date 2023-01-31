@@ -3,7 +3,7 @@ import './PictureList.css';
 
 const PictureList = ({ pictures }) => {
 	return (
-		<div>
+		<div className='pictureList'>
 		{
 			pictures.map((picture, i) => {
 				return(

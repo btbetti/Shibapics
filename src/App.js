@@ -37,20 +37,28 @@ class App extends Component {
 
   render () {
     return (
-      <div className="App">
-        <h1>Animal pictures viewer</h1>
-        <Dropdown 
-          className='dropdown' 
-          controlClassName='dropdownControl' 
-          menuClassName='dropdownMenu' 
-          arrowClassName='arrowClassName' 
-          options={options} 
-          onChange={this.onSelect} 
-          placeholder="Select an option"/>
-        <p className='text'>Number of animals</p>
-        <input className='slider' onChange={this.onChange} type='range' min='1' max='30' value={this.state.number}/>
-        <p className='inputLabel'>{this.state.number}</p>
-        <button className='button' onClick={this.onClick} disabled={!this.state.selectedOption}>Get pictures</button>
+      <div>
+        <div className="header">
+          <h1>Animal pictures viewer</h1>
+          <div className='controlBar'>
+            <Dropdown 
+              className='dropdown' 
+              controlClassName='dropdownControl' 
+              menuClassName='dropdownMenu' 
+              arrowClassName='arrowClassName' 
+              options={options} 
+              onChange={this.onSelect} 
+              placeholder="Select an option"/>
+            <div>
+              <p className='text'>Number of animals</p>
+              <div className='numberSelector'>
+                <input className='slider' onChange={this.onChange} type='range' min='1' max='30' value={this.state.number}/>
+                <p className='inputLabel'>{this.state.number}</p>
+              </div>
+            </div>
+            <button className='button' onClick={this.onClick} disabled={!this.state.selectedOption}>Get pictures</button>
+          </div>
+        </div>
         <PictureList pictures={this.state.pictures}/>
       </div>
     );

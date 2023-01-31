@@ -1,20 +1,24 @@
-h1 {
-  text-align: center;
-  font-size: 45px;
-  color: #A35F35;
-  margin: 30px;
+.header {
+  display: flex;
+  justify-content: space-between;
 }
 
-.App {
-  align-items: center;
+h1 {
+  text-align: left;
+  font-size: 45px;
+  color: #A35F35;
+  margin-left: 50px;
+}
+
+.controlBar {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .dropdown {
   width: 200px;
-  margin: 30px;
-  margin-bottom: 40px;
+  margin-right: 30px;
 }
 
 .dropdownControl {
@@ -71,15 +75,27 @@ input[type="range"]::-webkit-slider-thumb {
 .text {
   color: #A35F35;
   font-weight: bold;
-  margin: 8px;
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 8px;
+
 }
 
 .inputLabel {
   color: #7A3911;
   font-weight: bold;
   font-size: 1.2rem;
-  margin: 5px;
-  margin-bottom: 30px;
+  margin-block: 0;
+  margin-left: 5px;
+  width: 15px;
+}
+
+.numberSelector {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  margin-bottom: 25px;
 }
 
 .button {
@@ -93,7 +109,8 @@ input[type="range"]::-webkit-slider-thumb {
   font-family: none;
   box-shadow: 2px 3px #7A3911;
   border:none;
-  margin-bottom: 40px;
+  margin-right: 50px;
+  margin-left: 30px;
 }
 
 .button:hover:enabled {
@@ -103,5 +120,3 @@ input[type="range"]::-webkit-slider-thumb {
 .button:disabled {
   opacity: 0.5;
 }
-
-
