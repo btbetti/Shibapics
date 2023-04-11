@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   onClick = (event) => {
-    fetch(`http://shibe.online/api/${this.state.selectedOption}?count=${this.state.number}`)
+    fetch(`https://shibe.online/api/${this.state.selectedOption}?count=${this.state.number}`)
       .then(response=> response.json())
       .then(pictures => {this.setState({ pictures })});
   }
