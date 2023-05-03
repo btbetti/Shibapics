@@ -1,3 +1,7 @@
+# Introduction
+
+Simple website that uses the [https://shibe.online/](https://shibe.online/) API to display images of shiba inus, cats and birds.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
